@@ -1,0 +1,9 @@
+chex
+dm-env
+gym
+huggingface-hub
+jax
+matplotlib
+numpy
+Pillow
+typing-extensions

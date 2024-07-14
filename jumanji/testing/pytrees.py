@@ -35,7 +35,8 @@ def is_equal_pytree(tree1: MixedTypeTree, tree2: MixedTypeTree) -> bool:
     trees.
 
     Note that this function will block gradients between the input and output, and is
-    created for use in the context of testing rather than for direct use inside RL algorithms."""
+    created for use in the context of testing rather than for direct use inside RL algorithms.
+    """
     is_equal_func = lambda leaf1, leaf2: np.array_equal(
         np.asarray(leaf1), np.asarray(leaf2)
     )

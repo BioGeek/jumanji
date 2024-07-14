@@ -362,9 +362,9 @@ class RobotWarehouse(Environment[State, specs.MultiDiscreteArray, Observation]):
 
     @cached_property
     def action_spec(self) -> specs.MultiDiscreteArray:
-        """Returns the action spec. 5 actions: [0,1,2,3,4] -> [No Op, Forward, Left, Right, Toggle_load].
-        Since this is a multi-agent environment, the environment expects an array of actions.
-        This array is of shape (num_agents,).
+        """Returns the action spec. 5 actions: [0,1,2,3,4] -> [No Op, Forward, Left, Right,
+        Toggle_load]. Since this is a multi-agent environment, the environment expects an array of
+        actions. This array is of shape (num_agents,).
         """
         return specs.MultiDiscreteArray(
             num_values=jnp.array([len(Action)] * self.num_agents, jnp.int32),

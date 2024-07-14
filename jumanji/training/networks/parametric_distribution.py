@@ -168,7 +168,8 @@ class FactorisedActionSpaceParametricDistribution(ParametricDistribution):
     def __init__(self, action_spec_num_values: chex.ArrayNumpy):
         """Initialize the distribution.
         Args:
-            action_spec_num_values: the dimensions of each of the factors in the action space"""
+            action_spec_num_values: the dimensions of each of the factors in the action space
+        """
         num_actions = int(np.prod(action_spec_num_values))
         posprocessor = FactorisedActionSpaceReshapeBijector(
             action_spec_num_values=action_spec_num_values

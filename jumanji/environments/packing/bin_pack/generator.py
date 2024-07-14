@@ -510,7 +510,7 @@ class CSVGenerator(Generator):
                 their quantity.
         """
         list_of_items = []
-        for (_, x_len, y_len, z_len, quantity) in rows:
+        for _, x_len, y_len, z_len, quantity in rows:
             identical_items = quantity * [
                 Item(
                     x_len=jnp.array(x_len, jnp.int32),

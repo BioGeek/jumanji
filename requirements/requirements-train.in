@@ -1,0 +1,8 @@
+-c requirements.txt
+dm-haiku
+hydra-core
+neptune-client
+optax
+rlax
+tensorboardX
+tqdm

@@ -179,7 +179,6 @@ def check_ghost_wall_collisions(
     x_size: int,
     y_size: int,
 ) -> Tuple[bool, chex.Array, chex.Array]:
-
     """
     Determine valid move for the ghost.
 

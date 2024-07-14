@@ -36,7 +36,6 @@ from jumanji.viewer import Viewer
 
 
 class FlatPack(Environment[State, specs.MultiDiscreteArray, Observation]):
-
     """The FlatPack environment with a configurable number of row and column blocks.
     Here the goal of an agent is to completely fill an empty grid by placing all
     available blocks. It can be thought of as a discrete 2D version of the `BinPack`

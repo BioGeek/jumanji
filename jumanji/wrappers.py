@@ -150,9 +150,9 @@ class JumanjiToDMEnvWrapper(
         self._jitted_reset: Callable[[chex.PRNGKey], Tuple[State, TimeStep]] = jax.jit(
             self._env.reset
         )
-        self._jitted_step: Callable[
-            [State, chex.Array], Tuple[State, TimeStep]
-        ] = jax.jit(self._env.step)
+        self._jitted_step: Callable[[State, chex.Array], Tuple[State, TimeStep]] = (
+            jax.jit(self._env.step)
+        )
 
     def __repr__(self) -> str:
         return str(self._env.__repr__())
