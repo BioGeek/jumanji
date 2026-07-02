@@ -12,5 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from jumanji.environments.logic.drop_7.env import Drop7
-from jumanji.environments.logic.drop_7.types import Observation, State
+from jumanji.training.networks.masked_categorical_random import (
+    masked_categorical_random,
+)
+from jumanji.training.networks.protocols import RandomPolicy
+
+
+def make_random_policy_drop_7() -> RandomPolicy:
+    """Make random policy for the `Drop7` environment."""
+    return masked_categorical_random

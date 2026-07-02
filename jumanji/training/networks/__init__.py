@@ -30,6 +30,10 @@ from jumanji.training.networks.connector.actor_critic import (
 from jumanji.training.networks.connector.random import make_random_policy_connector
 from jumanji.training.networks.cvrp.actor_critic import make_actor_critic_networks_cvrp
 from jumanji.training.networks.cvrp.random import make_random_policy_cvrp
+from jumanji.training.networks.drop_7.actor_critic import (
+    make_actor_critic_networks_drop_7,
+)
+from jumanji.training.networks.drop_7.random import make_random_policy_drop_7
 from jumanji.training.networks.flat_pack.actor_critic import (
     make_actor_critic_networks_flat_pack,
 )

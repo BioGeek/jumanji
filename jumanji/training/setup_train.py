@@ -29,6 +29,7 @@ from jumanji.environments import (
     BinPack,
     Cleaner,
     Connector,
+    Drop7,
     FlatPack,
     Game2048,
     GraphColoring,
@@ -175,6 +176,9 @@ def _setup_random_policy(  # noqa: CCR001
     elif cfg.env.name == "game_2048":
         assert isinstance(env.unwrapped, Game2048)
         random_policy = networks.make_random_policy_game_2048()
+    elif cfg.env.name == "drop_7":
+        assert isinstance(env.unwrapped, Drop7)
+        random_policy = networks.make_random_policy_drop_7()
     elif cfg.env.name == "sudoku":
         assert isinstance(env.unwrapped, Sudoku)
         random_policy = networks.make_random_policy_sudoku(sudoku=env.unwrapped)
@@ -302,6 +306,14 @@ def _setup_actor_critic_neworks(  # noqa: CCR001
         assert isinstance(env.unwrapped, Game2048)
         actor_critic_networks = networks.make_actor_critic_networks_game_2048(
             game_2048=env.unwrapped,
+            num_channels=cfg.env.network.num_channels,
+            policy_layers=cfg.env.network.policy_layers,
+            value_layers=cfg.env.network.value_layers,
+        )
+    elif cfg.env.name == "drop_7":
+        assert isinstance(env.unwrapped, Drop7)
+        actor_critic_networks = networks.make_actor_critic_networks_drop_7(
+            drop_7=env.unwrapped,
             num_channels=cfg.env.network.num_channels,
             policy_layers=cfg.env.network.policy_layers,
             value_layers=cfg.env.network.value_layers,
